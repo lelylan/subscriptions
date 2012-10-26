@@ -6,6 +6,7 @@ FactoryGirl.define do
     application_id { FactoryGirl.create(:application).id }
     resources %w(device)
     events %w(execute)
+    redirect_uri 'http://callback.com/lelylan'
   end
 
   trait :with_all_subs do

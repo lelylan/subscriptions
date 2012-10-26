@@ -36,13 +36,13 @@ shared_examples_for 'a creatable resource' do
   end
 end
 
-shared_examples_for 'an updatable resource' do
+shared_examples_for 'an updatable resource' do |updated|
 
   it 'updates the resource' do
     page.driver.put uri, params.to_json
     resource.reload
     page.status_code.should == 200
-    page.should have_content 'updated'
+    page.should have_content updated
     has_resource resource
   end
 end
