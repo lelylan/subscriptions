@@ -1,0 +1,40 @@
+development:
+  sessions:
+    default:
+      database: webhooks_development
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+    people:
+      database: people_development
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+  options:
+    # set opptions
+test:
+  sessions:
+    default:
+      database: webhooks_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+    people:
+      database: people_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+  options:
+    # set opptions
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_WEBHOOKS_URL'] %>
+    people:
+      uri: <%= ENV['MONGOLAB_PEOPLE_URL'] %>
+  options:
+    # set opptions

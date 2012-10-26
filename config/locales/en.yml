@@ -1,0 +1,9 @@
+en:
+  notifications:
+    resource:
+      not_found: "Resource not found"
+      not_valid: "Not valid attributes"
+    json:
+      not_valid: "Not valid JSON"
+    access:
+      not_authorized: "Token not valid"
