@@ -1,3 +1,14 @@
 pagination:
   per: 25
   max_per: 100
+subscriptions:
+  resources:
+    - device
+    - type
+    - location
+  events:
+    - create
+    - update
+    - delete
+    - execute
+
