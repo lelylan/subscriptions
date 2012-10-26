@@ -10,16 +10,6 @@ feature 'SubscriptionsController' do
   let(:controller) { 'subscriptions' }
   let(:factory)    { 'subscription' }
 
-  context 'with not valid credentials' do
-
-    before { page.driver.browser.authorize 'not_exisitng_app_uid', application.secret }
-
-    describe 'GET /subscriptions' do
-      let(:uri) { '/subscriptions' }
-      it_behaves_like 'a not authorized resource', 'page.driver.get(uri)'
-    end
-  end
-
   describe 'GET /subscriptions' do
 
     let!(:resource) { FactoryGirl.create :subscription, application_id: application.id }
@@ -83,6 +73,16 @@ feature 'SubscriptionsController' do
     it_behaves_like 'a deletable resource'
     it_behaves_like 'a not owned resource', 'page.driver.delete(uri)'
     it_behaves_like 'a not found resource', 'page.driver.delete(uri)'
+  end
+
+  context 'with not valid credentials' do
+
+    before { page.driver.browser.authorize 'not_exisitng_app_uid', application.secret }
+
+    describe 'GET /subscriptions' do
+      let(:uri) { '/subscriptions' }
+      it_behaves_like 'a not authorized resource', 'page.driver.get(uri)'
+    end
   end
 end
 
