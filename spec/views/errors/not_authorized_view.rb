@@ -8,7 +8,7 @@ module ViewNotAuthorizedMethods
     json.request.should    == page.current_url
 
     json.error.code.should        == 'notifications.access.not_authorized'
-    json.error.description.should == 'Token not valid'
+    json.error.description.should == 'Application credentials not valid'
   end
 
 end

@@ -6,4 +6,4 @@ en:
     json:
       not_valid: "Not valid JSON"
     access:
-      not_authorized: "Token not valid"
+      not_authorized: "Application credentials not valid"

@@ -5,6 +5,10 @@
       { template: 'shared/401', :status => :unauthorized }
     end
 
+    def render_401
+      render 'shared/401', status: 401 and return
+    end
+
     def render_404(code = 'notifications.resource.not_found', uri = nil)
       @code  = code
       @error = I18n.t(code)
