@@ -14,7 +14,7 @@ class SubscriptionsController < ApplicationController
 
   def create
     @subscription = Subscription.new(params)
-    @subscription.application_id = current_app.id
+    @subscription.client_id = current_client.id
     if @subscription.save!
       render 'show', status: 201, subscription: SubscriptionDecorator.decorate(@subscription).uri
     else
@@ -38,7 +38,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def find_owned_resources
-    @subscriptions = Subscription.where(application_id: current_app.id)
+    @subscriptions = Subscription.where(client_id: current_client.id)
   end
 
   def find_resource

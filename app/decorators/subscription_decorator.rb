@@ -6,6 +6,6 @@ class SubscriptionDecorator < ApplicationDecorator
   end
 
   def application_uri
-    "#{h.request.protocol}#{people_host}/oauth/applications/#{model.application_id}"
+    "#{h.request.protocol}#{people_host}/oauth/applications/#{model.client_id}"
   end
 end

@@ -5,7 +5,7 @@ module HelpersViewMethods
     json.application_uri.should == subscription.application_uri
     json.resources.should == subscription.resources
     json.events.should == subscription.events
-    json.redirect_uri.should == subscription.redirect_uri
+    json.callback_uri.should == subscription.callback_uri
     json.created_at.should_not be_nil
     json.updated_at.should_not be_nil
   end

@@ -4,12 +4,12 @@ describe Subscription do
 
   subject { FactoryGirl.create :subscription }
 
-  it { should validate_presence_of('application_id') }
+  it { should validate_presence_of('client_id') }
   it { should validate_presence_of('resources') }
   it { should validate_presence_of('events') }
 
-  it { Settings.uris.valid.each     { |uri| should allow_value(uri).for(:redirect_uri) } }
-  it { Settings.uris.not_valid.each { |uri| should_not allow_value(uri).for(:redirect_uri) } }
+  it { Settings.uris.valid.each     { |uri| should allow_value(uri).for(:callback_uri) } }
+  it { Settings.uris.not_valid.each { |uri| should_not allow_value(uri).for(:callback_uri) } }
 
 
   context 'when validating the resource types' do

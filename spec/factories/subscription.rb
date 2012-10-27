@@ -3,10 +3,10 @@ Settings.reload!
 
 FactoryGirl.define do
   factory :subscription do
-    application_id { FactoryGirl.create(:application).id }
+    client_id { FactoryGirl.create(:application).id }
     resources %w(status)
     events %w(update)
-    redirect_uri 'http://callback.com/lelylan'
+    callback_uri 'http://callback.com/lelylan'
   end
 
   trait :with_all_subs do

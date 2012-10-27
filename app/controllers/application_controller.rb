@@ -9,13 +9,13 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     authenticate_or_request_with_http_basic do |uid, secret|
-      @current_app = Doorkeeper::Application.where(uid: uid, secret: secret).first
-      @current_app == nil ? false : true
+      @current_client = Doorkeeper::Application.where(uid: uid, secret: secret).first
+      @current_client == nil ? false : true
     end
   end
 
-  def current_app
-    @current_app
+  def current_client
+    @current_client
   end
 
   # Override the 401 notification method

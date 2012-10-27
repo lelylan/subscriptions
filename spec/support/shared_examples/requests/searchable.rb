@@ -4,7 +4,7 @@ shared_examples_for 'a searchable resource' do |searchable|
 
     describe "?#{key}=:#{key}" do
 
-      let!(:result) { FactoryGirl.create factory, key.to_s.pluralize => [value], application_id: application.id }
+      let!(:result) { FactoryGirl.create factory, key.to_s.pluralize => [value], client_id: application.id }
 
       it 'returns the searched resource' do
         page.driver.get uri, key => value

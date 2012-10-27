@@ -3,18 +3,18 @@ class Subscription
   include Mongoid::Timestamps
   include Resourceable
 
-  field :application_id, type: Moped::BSON::ObjectId
-  field :resources,      type: Array, default: []
-  field :events,         type: Array, default: []
-  field :redirect_uri
+  field :client_id, type: Moped::BSON::ObjectId
+  field :resources, type: Array, default: []
+  field :events,    type: Array, default: []
+  field :callback_uri
 
   index({ resource_owner_id: 1 })
-  index({ application_id: 1 })
+  index({ client_id: 1 })
 
-  attr_protected :application_id
+  attr_protected :client_id
 
-  validates :application_id, presence: true
+  validates :client_id, presence: true
   validates :resources, presence: true, list: { in: Settings.subscriptions.resources }
   validates :events, presence: true, list: { in: Settings.subscriptions.events }
-  validates :redirect_uri, uri: true
+  validates :callback_uri, uri: true
 end

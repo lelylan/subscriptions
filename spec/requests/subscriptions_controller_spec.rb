@@ -12,7 +12,7 @@ feature 'SubscriptionsController' do
 
   describe 'GET /subscriptions' do
 
-    let!(:resource) { FactoryGirl.create :subscription, application_id: application.id }
+    let!(:resource) { FactoryGirl.create :subscription, client_id: application.id }
     let(:uri)       { '/subscriptions' }
 
     it_behaves_like 'a listable resource'
@@ -22,7 +22,7 @@ feature 'SubscriptionsController' do
 
   context 'GET /subscriptions/:id' do
 
-    let!(:resource) { FactoryGirl.create :subscription, application_id: application.id }
+    let!(:resource) { FactoryGirl.create :subscription, client_id: application.id }
     let(:uri)       { "/subscriptions/#{resource.id}" }
 
     it_behaves_like 'a showable resource'
@@ -38,7 +38,7 @@ feature 'SubscriptionsController' do
     let(:params) {{ 
       resources:    %w(status consumption device type location), 
       events:       %w(create update delete),
-      redirect_uri: 'http://callback.com/lelylan'
+      callback_uri: 'http://callback.com/lelylan'
     }}
 
     it_behaves_like 'a creatable resource'
@@ -47,14 +47,14 @@ feature 'SubscriptionsController' do
 
   context 'PUT /subscriptions/:id' do
 
-    let!(:resource)  { FactoryGirl.create :subscription, application_id: application.id }
+    let!(:resource)  { FactoryGirl.create :subscription, client_id: application.id }
 
     let(:uri) { "/subscriptions/#{resource.id}" }
 
     let(:params) {{
       resources:    %w(status consumption device type location), 
       events:       %w(create update delete),
-      redirect_uri: 'http://callback.com/update'
+      callback_uri: 'http://callback.com/update'
     }}
 
     it_behaves_like 'an updatable resource', 'type'
@@ -67,7 +67,7 @@ feature 'SubscriptionsController' do
   end
 
   context 'DELETE /subscriptions/:id' do
-    let!(:resource)  { FactoryGirl.create :subscription, application_id: application.id }
+    let!(:resource)  { FactoryGirl.create :subscription, client_id: application.id }
     let(:uri)        { "/subscriptions/#{resource.id}" }
 
     it_behaves_like 'a deletable resource'
