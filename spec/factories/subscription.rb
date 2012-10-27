@@ -4,8 +4,8 @@ Settings.reload!
 FactoryGirl.define do
   factory :subscription do
     application_id { FactoryGirl.create(:application).id }
-    resources %w(device)
-    events %w(execute)
+    resources %w(status)
+    events %w(update)
     redirect_uri 'http://callback.com/lelylan'
   end
 

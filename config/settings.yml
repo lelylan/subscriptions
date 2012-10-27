@@ -3,6 +3,8 @@ pagination:
   max_per: 100
 subscriptions:
   resources:
+    - status
+    - consumption
     - device
     - type
     - location
@@ -10,5 +12,4 @@ subscriptions:
     - create
     - update
     - delete
-    - execute
 

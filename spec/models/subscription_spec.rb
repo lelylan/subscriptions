@@ -14,7 +14,7 @@ describe Subscription do
 
   context 'when validating the resource types' do
 
-    %w(device type location).each do |resource|
+    %w(status consumption device type location).each do |resource|
 
       context 'with valid resources' do
 
@@ -42,7 +42,7 @@ describe Subscription do
   
   context 'when validating the event types' do
 
-    %w(create update delete execute).each do |event|
+    %w(create update delete).each do |event|
 
       context 'with valid events' do
 

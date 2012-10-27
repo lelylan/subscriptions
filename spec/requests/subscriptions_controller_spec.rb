@@ -36,8 +36,8 @@ feature 'SubscriptionsController' do
     let(:uri) { '/subscriptions' }
 
     let(:params) {{ 
-      resources:    %w(device type location), 
-      events:       %w(create update delete execute),
+      resources:    %w(status consumption device type location), 
+      events:       %w(create update delete),
       redirect_uri: 'http://callback.com/lelylan'
     }}
 
@@ -52,8 +52,8 @@ feature 'SubscriptionsController' do
     let(:uri) { "/subscriptions/#{resource.id}" }
 
     let(:params) {{
-      resources:    %w(device type location), 
-      events:       %w(create update delete execute),
+      resources:    %w(status consumption device type location), 
+      events:       %w(create update delete),
       redirect_uri: 'http://callback.com/update'
     }}
 
