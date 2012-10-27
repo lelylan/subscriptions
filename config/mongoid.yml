@@ -1,7 +1,7 @@
 development:
   sessions:
     default:
-      database: webhooks_development
+      database: subscriptions_development
       hosts:
         - localhost:27017
       options:
@@ -17,7 +17,7 @@ development:
 test:
   sessions:
     default:
-      database: webhooks_test
+      database: subscriptions_test
       hosts:
         - localhost:27017
       options:
@@ -33,7 +33,7 @@ test:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOLAB_WEBHOOKS_URL'] %>
+      uri: <%= ENV['MONGOLAB_SUBSCRIPTIONS_URL'] %>
     people:
       uri: <%= ENV['MONGOLAB_PEOPLE_URL'] %>
   options:
