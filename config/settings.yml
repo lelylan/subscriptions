@@ -3,13 +3,13 @@ pagination:
   max_per: 100
 subscriptions:
   resources:
-    - status
-    - consumption
-    - device
-    - type
-    - location
+    - devices
+    - types
+    - locations
   events:
-    - create
-    - update
-    - delete
+    - property-updated
+    - consumption-created
+    - created
+    - updated
+    - deleted
 

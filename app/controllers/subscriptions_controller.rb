@@ -46,13 +46,13 @@ class SubscriptionsController < ApplicationController
   end
 
   def search_params
-    @subscriptions = @subscriptions.in(resources: params[:resource]) if params[:resource]
-    @subscriptions = @subscriptions.in(events: params[:event])       if params[:event]
+    @subscriptions = @subscriptions.where(resource: params[:resource]) if params[:resource]
+    @subscriptions = @subscriptions.where(event: params[:event])       if params[:event]
   end
 
   def pagination
     params[:per] = (params[:per] || Settings.pagination.per).to_i
-    params[:per] = Settings.pagination.per if params[:per] == 0 
+    params[:per] = Settings.pagination.per if params[:per] == 0
     params[:per] = Settings.pagination.max_per if params[:per] > Settings.pagination.max_per
     @subscriptions = @subscriptions.gt(id: find_id(params[:start])) if params[:start]
   end

@@ -17,7 +17,7 @@ feature 'SubscriptionsController' do
 
     it_behaves_like 'a listable resource'
     it_behaves_like 'a paginable resource'
-    it_behaves_like 'a searchable resource', { resource: 'type', event: 'create' }
+    it_behaves_like 'a searchable resource', { resource: 'types', event: 'deleted' }
   end
 
   context 'GET /subscriptions/:id' do
@@ -35,9 +35,9 @@ feature 'SubscriptionsController' do
 
     let(:uri) { '/subscriptions' }
 
-    let(:params) {{ 
-      resources:    %w(status consumption device type location), 
-      events:       %w(create update delete),
+    let(:params) {{
+      resource:     'devices',
+      event:       'property-updated',
       callback_uri: 'http://callback.com/lelylan'
     }}
 
@@ -52,18 +52,18 @@ feature 'SubscriptionsController' do
     let(:uri) { "/subscriptions/#{resource.id}" }
 
     let(:params) {{
-      resources:    %w(status consumption device type location), 
-      events:       %w(create update delete),
+      resource:     'locations',
+      event:        'deleted',
       callback_uri: 'http://callback.com/update'
     }}
 
-    it_behaves_like 'an updatable resource', 'type'
-    it_behaves_like 'an updatable resource', 'delete'
+    it_behaves_like 'an updatable resource', 'locations'
+    it_behaves_like 'an updatable resource', 'deleted'
     it_behaves_like 'an updatable resource', 'http://callback.com/update'
 
     it_behaves_like 'a not owned resource', 'page.driver.put(uri)'
     it_behaves_like 'a not found resource', 'page.driver.put(uri)'
-    it_behaves_like 'a validated resource', 'page.driver.put(uri, { resources: "" }.to_json)', { method: 'PUT', error: "can't be blank" }
+    it_behaves_like 'a validated resource', 'page.driver.put(uri, { resource: "" }.to_json)', { method: 'PUT', error: "can't be blank" }
   end
 
   context 'DELETE /subscriptions/:id' do
