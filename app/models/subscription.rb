@@ -9,7 +9,7 @@ class Subscription
   field :callback_uri
 
   index({ resource_owner_id: 1 })
-  index({ client_id: 1 })
+  index({ client_id: 1, resource: 1, event: 1 })
 
   attr_protected :client_id
 
