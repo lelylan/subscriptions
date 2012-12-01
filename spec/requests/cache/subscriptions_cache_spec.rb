@@ -7,10 +7,8 @@ feature 'Caching' do
   after  { ActionController::Base.perform_caching = false }
 
   let!(:application)  { FactoryGirl.create :application }
-  let!(:user)         { FactoryGirl.create :user }
-  let!(:access_token) { FactoryGirl.create :access_token, application: application, scopes: 'resources', resource_owner_id: user.id }
 
-  before { page.driver.header 'Authorization', "Bearer #{access_token.token}" }
+  before { page.driver.browser.authorize application.uid, application.secret }
   before { page.driver.header 'Content-Type', 'application/json' }
 
   let(:controller) { 'subscriptions' }
@@ -18,7 +16,7 @@ feature 'Caching' do
 
   describe 'GET /subscriptions/:id' do
 
-    let!(:resource) { FactoryGirl.create :subscription, resource_owner_id: user.id }
+    let!(:resource) { FactoryGirl.create :subscription, client_id: application.id }
     let(:uri)       { "/subscriptions/#{resource.id}" }
     let(:cache_key) { ActiveSupport::Cache.expand_cache_key(['subscription_serializer', resource.cache_key, 'to-json']) }
 
@@ -112,11 +110,11 @@ feature 'Caching' do
 
   describe 'GET /subscriptions' do
 
-    let!(:resource) { FactoryGirl.create :subscription, resource_owner_id: user.id }
+    let!(:resource) { FactoryGirl.create :subscription, client_id: application.id }
     let(:uri)       { "/subscriptions" }
 
-    let(:cache_json_key) { ActiveSupport::Cache.expand_cache_key(['subscription_short_serializer', resource.cache_key, 'to-json']) }
-    let(:cache_hash_key) { ActiveSupport::Cache.expand_cache_key(['subscription_short_serializer', resource.cache_key, 'serializable-hash']) }
+    let(:cache_json_key) { ActiveSupport::Cache.expand_cache_key(['subscription_serializer', resource.cache_key, 'to-json']) }
+    let(:cache_hash_key) { ActiveSupport::Cache.expand_cache_key(['subscription_serializer', resource.cache_key, 'serializable-hash']) }
 
     before { page.driver.get uri }
 

@@ -11,7 +11,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def show
-    render json: @subscription
+    render json: @subscription if stale?(@subscription)
   end
 
   def create
