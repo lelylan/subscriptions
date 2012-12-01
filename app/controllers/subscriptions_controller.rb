@@ -17,7 +17,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(params)
     @subscription.client_id = current_client.id
-    if @subscription.save!
+    if @subscription.save
       render json: @subscription, status: 201, subscription: SubscriptionDecorator.decorate(@subscription).uri
     else
       render_422 'notifications.resource.not_valid', @subscription.errors
@@ -25,7 +25,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def update
-    if @subscription.update_attributes!(params)
+    if @subscription.update_attributes(params)
       render json: @subscription
     else
       render_422 'notifications.resource.not_valid', @subscription.errors
