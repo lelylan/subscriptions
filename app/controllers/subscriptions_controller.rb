@@ -7,16 +7,18 @@ class SubscriptionsController < ApplicationController
 
   def index
     @subscriptions = @subscriptions.limit(params[:per])
+    render json: @subscriptions
   end
 
   def show
+    render json: @subscription
   end
 
   def create
     @subscription = Subscription.new(params)
     @subscription.client_id = current_client.id
     if @subscription.save!
-      render 'show', status: 201, subscription: SubscriptionDecorator.decorate(@subscription).uri
+      render json: @subscription, status: 201, subscription: SubscriptionDecorator.decorate(@subscription).uri
     else
       render_422 'notifications.resource.not_valid', @subscription.errors
     end
@@ -24,14 +26,14 @@ class SubscriptionsController < ApplicationController
 
   def update
     if @subscription.update_attributes!(params)
-      render 'show'
+      render json: @subscription
     else
       render_422 'notifications.resource.not_valid', @subscription.errors
     end
   end
 
   def destroy
-    render 'show'
+    render json: @subscription
     @subscription.destroy
   end
 

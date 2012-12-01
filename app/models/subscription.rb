@@ -17,4 +17,6 @@ class Subscription
   validates :resource, presence: true, inclusion: { in: Settings.subscriptions.resources }
   validates :event, presence: true, inclusion: { in: Settings.subscriptions.events }
   validates :callback_uri, uri: true
+
+  def active_model_serializer; SubscriptionSerializer; end
 end

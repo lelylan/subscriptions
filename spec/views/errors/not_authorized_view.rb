@@ -4,8 +4,8 @@ module ViewNotAuthorizedMethods
     json = JSON.parse(page.source)
     json = Hashie::Mash.new json
 
-    json.status.should     == '401'
-    json.request.should    == page.current_url
+    json.status.should  == 401
+    json.request.should == page.current_url
 
     json.error.code.should        == 'notifications.access.not_authorized'
     json.error.description.should == 'Application credentials not valid'

@@ -1,10 +1,9 @@
 GIT
-  remote: https://github.com/andreareginato/doorkeeper
-  revision: 94371aa0f32014a1bb8aae30cf9687875ee4401d
-  branch: mongoid_v3
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: e79fe399a53bb79b22f040697681617eea8cedbc
   specs:
-    doorkeeper (0.5.0.dev)
-      railties (~> 3.1)
+    active_model_serializers (0.5.2)
+      activemodel (>= 3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -67,6 +66,7 @@ GEM
     colored (1.2)
     columnize (0.3.6)
     crack (0.3.1)
+    dalli (2.5.0)
     database_cleaner (0.9.1)
     debugger (1.2.1)
       columnize (>= 0.3.1)
@@ -76,6 +76,8 @@ GEM
       debugger-ruby_core_source (>= 1.1.1)
     debugger-ruby_core_source (1.1.4)
     diff-lcs (1.1.3)
+    doorkeeper (0.6.2)
+      railties (~> 3.1)
     draper (0.15.0)
       actionpack (~> 3.2)
       activesupport (~> 3.2)
@@ -162,6 +164,10 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
+    rails-api (0.0.2)
+      actionpack (>= 3.2.0)
+      railties (>= 3.2.0)
+      tzinfo (~> 0.3.31)
     rails_best_practices (1.12.0)
       activesupport
       awesome_print
@@ -249,15 +255,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   addressable
   bcrypt-ruby
   bundler
   capybara
   capybara-json
   coffee-rails (~> 3.2.1)
+  dalli
   database_cleaner
   debugger
-  doorkeeper!
+  doorkeeper
   draper (~> 0.15.0)
   factory_girl_rails
   foreman
@@ -271,6 +279,7 @@ DEPENDENCIES
   mongoid-ancestry (~> 0.3.0)
   rabl
   rails (~> 3.2.6)
+  rails-api
   rails_best_practices
   rails_config
   rb-fsevent
