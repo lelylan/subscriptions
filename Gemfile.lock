@@ -284,7 +284,7 @@ DEPENDENCIES
   guard-spork
   hashie
   launchy
-  mongoid (~> 3.0.3)
+  mongoid
   mongoid-ancestry (~> 0.3.0)
   rabl
   rails (~> 3.2.9)
