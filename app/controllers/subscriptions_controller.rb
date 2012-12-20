@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
   before_filter :pagination,    only: %w(index)
 
   def index
-    @subscriptions = @subscriptions.limit(params[:per])
+    @subscriptions = @subscriptions.desc(:id).limit(params[:per])
     render json: @subscriptions
   end
 
