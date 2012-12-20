@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '~>3.2.6'
+gem 'rails', '~>3.2.9'
 gem 'unicorn'
 gem 'mongoid', '~> 3.0.3'
 gem 'doorkeeper'
@@ -23,7 +23,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.6'
   gem 'shoulda'
-  gem 'capybara'
+  gem 'capybara', '~> 1.1.4'
   gem 'capybara-json'
   gem 'factory_girl_rails', require: false
   gem 'database_cleaner'
