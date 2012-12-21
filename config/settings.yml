@@ -4,12 +4,11 @@ pagination:
 subscriptions:
   resources:
     - devices
-    - types
     - locations
+    - consumptions
   events:
-    - property-updated
-    - consumption-created
-    - created
-    - updated
-    - deleted
+    - property-update
+    - create
+    - update
+    - delete
 

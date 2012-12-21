@@ -5,7 +5,7 @@ FactoryGirl.define do
   factory :subscription do
     client_id { FactoryGirl.create(:application).id }
     resource 'devices'
-    event 'property-updated'
+    event 'property-update'
     callback_uri 'http://callback.com/lelylan'
   end
 end
