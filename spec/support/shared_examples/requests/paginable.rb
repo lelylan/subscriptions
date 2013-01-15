@@ -3,7 +3,7 @@ shared_examples_for 'a paginable resource' do
   let(:decorator)  { "#{controller.classify}Decorator".constantize }
 
   let!(:resource)  { decorator.decorate(FactoryGirl.create(factory, client_id: application.id)) }
-  let!(:resources) { FactoryGirl.create_list(factory, Settings.pagination.per + 5, client_id: application.id) }
+  let!(:resources) { FactoryGirl.create_list('sequence_subscription', Settings.pagination.per + 5, client_id: application.id) }
 
   describe '?start=:uri' do
 

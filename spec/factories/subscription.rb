@@ -8,4 +8,8 @@ FactoryGirl.define do
     event 'property-update'
     callback_uri 'http://callback.com/lelylan'
   end
+
+  factory :sequence_subscription, parent: :subscription do
+    sequence(:callback_uri) {|n| "http://callback.com/lelylan#{n}" }
+  end
 end
