@@ -7,8 +7,8 @@ subscriptions:
     - locations
     - consumptions
   events:
-    - property-update
+    - 'property-update'
     - create
     - update
-    - delete
+    - destroy
 
