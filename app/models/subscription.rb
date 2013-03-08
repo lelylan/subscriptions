@@ -11,7 +11,7 @@ class Subscription
   index({ resource_owner_id: 1 }, { background: true })
   index({ client_id: 1, resource: 1, event: 1 }, { background: true })
 
-  attr_protected :client_id
+  attr_accessible :resource, :event, :callback_uri
 
   validates :client_id, presence: true
   validates :resource, presence: true, inclusion: { in: Settings.subscriptions.resources }

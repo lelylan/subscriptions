@@ -17,7 +17,7 @@ feature 'SubscriptionsController' do
 
     it_behaves_like 'a listable resource'
     it_behaves_like 'a paginable resource'
-    it_behaves_like 'a searchable resource', { resource: 'consumptions', event: 'delete' }
+    it_behaves_like 'a searchable resource', { resource: 'locations', event: 'destroy' }
   end
 
   context 'GET /subscriptions/:id' do
@@ -54,12 +54,12 @@ feature 'SubscriptionsController' do
 
     let(:params) {{
       resource:     'locations',
-      event:        'delete',
+      event:        'destroy',
       callback_uri: 'http://callback.com/update'
     }}
 
     it_behaves_like 'an updatable resource', 'locations'
-    it_behaves_like 'an updatable resource', 'delete'
+    it_behaves_like 'an updatable resource', 'destroy'
     it_behaves_like 'an updatable resource', 'http://callback.com/update'
 
     it_behaves_like 'a not owned resource', 'page.driver.put(uri)'
