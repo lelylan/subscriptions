@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '~>3.2.9'
+gem 'rails', '3.2.13'
+gem 'mongoid', '~> 3.1.4'
+gem 'mongoid-ancestry', '~> 0.3.1'
 gem 'unicorn'
-gem 'mongoid'
 gem 'doorkeeper'
-gem 'mongoid-ancestry', '~> 0.3.0'
 gem 'rabl'
 gem 'draper', '~> 0.15.0'
 gem 'yajl-ruby'
@@ -35,6 +35,7 @@ group :development, :test do
   gem 'hashie'
   gem 'rails_best_practices'
   gem 'debugger'
+  gem 'brakeman', :require => false
 end
 
 group :test do
