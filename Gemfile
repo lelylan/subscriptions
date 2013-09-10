@@ -18,6 +18,7 @@ gem 'dalli'
 gem 'rails-api'
 gem 'active_model_serializers', git: 'git://github.com/rails-api/active_model_serializers.git'
 gem 'rack-cors', require: 'rack/cors'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'foreman'
