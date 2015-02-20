@@ -67,13 +67,6 @@ GEM
     code_analyzer (0.3.1)
       sexp_processor
     coderay (1.0.9)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.6.2)
     colored (1.2)
     columnize (0.3.6)
     crack (0.3.2)
@@ -93,8 +86,6 @@ GEM
       actionpack (~> 3.2)
       activesupport (~> 3.2)
     erubis (2.7.0)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
@@ -186,6 +177,9 @@ GEM
       actionpack (>= 3.2.11)
       railties (>= 3.2.11)
       tzinfo (~> 0.3.31)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_best_practices (1.13.5)
       activesupport
       awesome_print
@@ -196,6 +190,8 @@ GEM
       ruby-progressbar
     rails_config (0.3.3)
       activesupport (>= 3.0)
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -236,10 +232,6 @@ GEM
       sexp_processor (~> 4.1)
     rubyzip (0.9.9)
     sass (3.2.9)
-    sass-rails (3.2.6)
-      railties (~> 3.2.0)
-      sass (>= 3.1.10)
-      tilt (~> 1.3)
     selenium-webdriver (2.33.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -271,9 +263,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
-    uglifier (1.0.4)
-      execjs (>= 0.3.0)
-      multi_json (>= 1.0.2)
     unicorn (4.6.2)
       kgio (~> 2.6)
       rack
@@ -297,7 +286,6 @@ DEPENDENCIES
   bundler
   capybara (~> 1.1.4)
   capybara-json
-  coffee-rails (~> 3.2.1)
   dalli
   database_cleaner
   debugger
@@ -318,15 +306,14 @@ DEPENDENCIES
   rack-cors
   rails (= 3.2.13)
   rails-api
+  rails_12factor
   rails_best_practices
   rails_config
   rb-fsevent
   rspec-rails (~> 2.6)
-  sass-rails (~> 3.2.3)
   shoulda
   spork (~> 1.0rc)
   sqlite3
-  uglifier (~> 1.0.3)
   unicorn
   webmock
   yajl-ruby
