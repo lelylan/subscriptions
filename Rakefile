@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Webhooks::Application.load_tasks
+Subscriptions::Application.load_tasks
