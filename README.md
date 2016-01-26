@@ -73,6 +73,6 @@ Special thanks to [all people](https://github.com/lelylan/subscriptions/graphs/c
 See [CHANGELOG](https://github.com/lelylan/subscriptions/blob/master/CHANGELOG.md)
 
 
-## Copyright
+## License
 
-Copyright (c) 2013 [Lelylan](http://lelylan.com). See [LICENSE](locations/blob/master/LICENSE.md) for details.
+Lelylan is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
