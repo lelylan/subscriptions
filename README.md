@@ -20,7 +20,7 @@ When installing the service in production set [lelylan environment variables](ht
 
 ## Resources
 
-* [Lelylan Subscriptions API](https://dev.lelylan.com/api#subscriptions-api)
+* [Lelylan Subscriptions API](http://dev.lelylan.com/api#subscriptions-api)
 
 
 ## Contributing
