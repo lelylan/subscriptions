@@ -1,6 +1,6 @@
 # Subscriptions API
 
-Subscriptions API for Lelylan.
+Realtime subscriptions API
 
 
 ## Requirements
@@ -10,15 +10,18 @@ Subscriptions API is tested against MRI 1.9.3.
 
 ## Installation
 
-Clone the repository.
+        $ git clone git@github.com:lelylan/subscriptions.git
+        $ cd subscriptions
+        $ gem install bundler
+        $ bundle install 
+        $ foreman start
 
-    git clone git@github.com:lelylan/subscriptions.git
+When installing the service in production set [lelylan environment variables](https://github.com/lelylan/lelylan/blob/master/README.md#production).
 
 
 ## Resources
 
-* [Lelylan Subscriptions API](https://dev.lelylan.com/developers#realtime-api)
-* [Lelylan API](http://dev.lelylan.com)
+* [Lelylan Subscriptions API](https://dev.lelylan.com/api#subscriptions-api)
 
 
 ## Contributing
@@ -29,10 +32,11 @@ provide specs to your contribution.
 
 ### Running specs
 
-* Fork and clone the repository.
-* Run `gem install bundler` to get the latest for the gemset.
-* Run `bundle install` for dependencies.
-* Run `bundle exec guard` and press enter to execute all specs.
+        $ gem install bundler
+        $ bundle install 
+        $ bundle exec guard
+
+Press enter to execute all specs.
 
 
 ## Spec guidelines
