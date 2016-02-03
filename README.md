@@ -10,8 +10,7 @@ Subscriptions API is tested against MRI 1.9.3.
 
 ## Installation
 
-        $ git clone git@github.com:lelylan/subscriptions.git
-        $ cd subscriptions
+        $ git clone git@github.com:lelylan/subscriptions.git && cd subscriptions
         $ gem install bundler
         $ bundle install 
         $ foreman start
