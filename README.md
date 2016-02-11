@@ -33,6 +33,7 @@ provide specs to your contribution.
 
     $ gem install bundler
     $ bundle install 
+    $ start MongoDB server (it is expected to listen on TCP port 27017)
     $ bundle exec guard
 
 Press enter to execute all specs.
