@@ -10,9 +10,15 @@ Subscriptions API is tested against MRI 1.9.3.
 
 ## Installation
 
+Lelylan subscriptions service requires you to start a MongoDB server (listening on the default 27017 TCP port)
+
+    $ mongod
+
+Then install all libraries and start the service.
+
     $ git clone git@github.com:lelylan/subscriptions.git && cd subscriptions
     $ gem install bundler
-    $ bundle install 
+    $ mongod
     $ foreman start
 
 When installing the service in production set [lelylan environment variables](https://github.com/lelylan/lelylan/blob/master/README.md#production).
@@ -33,7 +39,6 @@ provide specs to your contribution.
 
     $ gem install bundler
     $ bundle install 
-    $ start MongoDB server (it is expected to listen on TCP port 27017)
     $ bundle exec guard
 
 Press enter to execute all specs.
