@@ -10,15 +10,30 @@ Subscriptions API is tested against MRI 1.9.3.
 
 ## Installation
 
-    $ git clone git@github.com:lelylan/subscriptions.git && cd subscriptions
-    $ gem install bundler
-    $ bundle install 
-    $ foreman start
+```bash
+$ git clone git@github.com:lelylan/subscriptions.git && cd subscriptions
+$ gem install bundler
+$ bundle install
+$ foreman start
+```
 
 ## Install with docker
 
-    $ docker build --tag=subscriptions .
-    $ docker run -d -it --name subscriptions subscriptions
+#### Badges
+Docker image: [lelylanlab/subscriptions](https://hub.docker.com/r/lelylanlab/subscriptions/)
+
+[![](https://images.microbadger.com/badges/version/lelylanlab/subscriptions:latest.svg)](http://microbadger.com/images/lelylanlab/subscriptions:latest "Get your own version badge on microbadger.com")  [![](https://images.microbadger.com/badges/image/lelylanlab/subscriptions:latest.svg)](http://microbadger.com/images/lelylanlab/subscriptions:latest "Get your own image badge on microbadger.com")
+
+### Use docker hub image
+```bash
+$ docker run -d -it --name subscriptions lelylanlab/subscriptions
+```
+
+### Generate local image
+```bash
+$ docker build --tag=subscriptions .
+$ docker run -d -it --name subscriptions subscriptions
+```
 
 When installing the service in production set [lelylan environment variables](https://github.com/lelylan/lelylan/blob/master/README.md#production).
 
@@ -30,15 +45,17 @@ When installing the service in production set [lelylan environment variables](ht
 
 ## Contributing
 
-Fork the repo on github and send a pull requests with topic branches. Do not forget to 
+Fork the repo on github and send a pull requests with topic branches. Do not forget to
 provide specs to your contribution.
 
 
 ### Running specs
 
-    $ gem install bundler
-    $ bundle install 
-    $ bundle exec guard
+```bash
+$ gem install bundler
+$ bundle install
+$ bundle exec guard
+```
 
 Press enter to execute all specs.
 
@@ -59,7 +76,7 @@ Use the [issue tracker](http://github.com/lelylan/subscriptions/issues) for bugs
 [Mail](mailto:dev@lelylan.com) or [Tweet](http://twitter.com/lelylan) us for any idea that can improve the project.
 
 
-## Links 
+## Links
 
 * [GIT Repository](http://github.com/lelylan/subscriptions)
 * [Lelylan Dev Center](http://dev.lelylan.com)
