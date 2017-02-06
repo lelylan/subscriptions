@@ -11,8 +11,8 @@ class OwnedValidator < ActiveModel::EachValidator
   end
 
   # Validate that the URIs I'm trying to connect belongs to the resource owner
-  def validate_owner(record, attribute, uris) 
-    klass = (attribute==:devices) ? Device : Location
+  def validate_owner(record, attribute, uris)
+    klass = Device
     ids   = find_ids(uris)
 
     real     = klass.in(id: ids).where(resource_owner_id: record.resource_owner_id)
