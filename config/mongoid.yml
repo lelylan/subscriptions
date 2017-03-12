@@ -1,19 +1,9 @@
 development:
   sessions:
     default:
-      database: subscriptions_development
-      hosts:
-        - localhost:27017
-      options:
-        consistency: :strong
+      uri: <%= ENV['MONGOLAB_SUBSCRIPTIONS_URL'] || 'mongodb://localhost:27017/subscriptions_development' %>
     people:
-      database: people_development
-      hosts:
-        - localhost:27017
-      options:
-        consistency: :strong
-  options:
-    # set opptions
+      uri: <%= ENV['MONGOLAB_PEOPLE_URL'] || 'mongodb://localhost:27017/people_development' %>
 test:
   sessions:
     default:
@@ -36,5 +26,3 @@ production:
       uri: <%= ENV['MONGOLAB_SUBSCRIPTIONS_URL'] %>
     people:
       uri: <%= ENV['MONGOLAB_PEOPLE_URL'] %>
-  options:
-    # set opptions

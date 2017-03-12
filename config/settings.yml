@@ -4,11 +4,9 @@ pagination:
 subscriptions:
   resources:
     - devices
-    - locations
     - consumptions
   events:
     - property-update
     - create
     - update
     - destroy
-
